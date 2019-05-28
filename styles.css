@@ -1,0 +1,76 @@
+$base-background: #051937;
+
+* {
+  margin: 0;
+	padding: 0;
+  background: $base-background;
+}
+
+body, html {
+  height: 100%;
+    background-color: black;
+}
+
+.earthgravity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+}
+
+.earthgravity > img {
+  width: 300px;
+  height: auto;
+  animation: spin 50s linear infinite;
+}
+
+.moon {
+  position: absolute;
+  background-color: transparent;
+  height: 450px;
+  width: 450px;
+  animation: spinreverse 10s linear infinite;
+}
+
+.moon img {
+  width: 75px;
+  height: auto;
+  animation: spin 6s linear infinite;
+}
+
+// ----------- ANIMATIONS ------------ //
+
+@media ( max-width: 1000px ) {
+  .moon {
+    height: 150px;
+    width: 150px;
+  }
+  .moon img{
+    width: 25px;
+    height: auto;
+  }
+  .earthgravity > img {
+    width: 100px;
+    height: auto;
+  }
+}
+
+@keyframes spinreverse {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
